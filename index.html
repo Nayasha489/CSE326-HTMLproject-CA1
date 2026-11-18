@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Checkout Queue Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🛒 Store Checkout Queue Simulation</h1>
+    <p>A simple simulation showing customer queues and counter distribution</p>
+  </header>
+
+  <!-- Dashboard Stats -->
+  <section class="dashboard">
+    <div class="stat-box">
+      <h3>Waiting in Queue</h3>
+      <p id="queueCount">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Total Served</h3>
+      <p id="servedCount">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Avg Wait Time</h3>
+      <p id="avgWait">0s</p>
+    </div>
+    <div class="stat-box">
+      <h3>Active Counters</h3>
+      <p id="openCounters">3 / 3</p>
+    </div>
+  </section>
+
+  <!-- Simulation Control Buttons -->
+  <section class="controls">
+    <h3>Add Customers</h3>
+    <div class="btn-group">
+      <button class="btn btn-blue" onclick="addCustomer('Regular')">+ Normal Customer</button>
+      <button class="btn btn-green" onclick="addCustomer('Express')">+ Express (3 Items)</button>
+      <button class="btn btn-purple" onclick="addCustomer('VIP')">👑 + VIP Customer</button>
+      <button class="btn btn-orange" onclick="addRush()">🔥 Peak Rush (+4)</button>
+    </div>
+
+    <div class="btn-group" style="margin-top: 10px;">
+      <button id="pauseBtn" class="btn btn-gray" onclick="togglePause()">Pause</button>
+      <button class="btn btn-red" onclick="resetSim()">Reset</button>
+    </div>
+  </section>
+
+  <!-- Main Area: Counters & Queue -->
+  <div class="main-content">
+
+    <!-- Checkout Counters -->
+    <section class="counters-container">
+      <h2>🏪 Checkout Counters</h2>
+      <div id="countersList">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Customer Waiting Line -->
+    <section class="queue-container">
+      <h2>🚶 Waiting Queue</h2>
+      <ul id="queueList">
+        <!-- Rendered by JavaScript -->
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
